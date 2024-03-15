@@ -153,27 +153,3 @@ revelar.reveal('.efeito-input5',
     delay: 2100
 })
 
-
-// PUXAR API
-
-
-$(document).ready(function() {
-    $('#myForm').submit(function(event) {
-        event.preventDefault(); // Evita que o formulário seja enviado diretamente
-
-        var formData = $(this).serialize(); // Serializa os dados do formulário
-
-        $.ajax({
-            type: 'POST',
-            url: 'https://portfolio-api-gold.vercel.app/', // URL para enviar os dados
-            data: formData,
-            success: function(response) {
-                alert(response); // Exibe mensagem de sucesso
-            },
-            error: function(xhr, status, error) {
-                console.error(error); // Exibe erro no console
-                alert('Erro ao enviar mensagem.');
-            }
-        });
-    });
-});
